@@ -421,18 +421,3 @@ footer {
   align-items: center;
   gap: 4rem;
 }
-
-@media (max-width: 500px) {
-  .navbar nav a {
-    margin-left: 1rem;
-    font-size: 0.9rem;
-  }
-
-  .navbar .logo {
-    font-size: 1.2rem;
-  }
-
-  .navbar {
-    padding: 0.75rem 1rem;
-  }
-}
