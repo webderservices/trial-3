@@ -39,3 +39,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// User Action Tracking - Logs clicks and form submits to localStorage
+
+function logUserAction(actionDescription) {
+  let logs = JSON.parse(localStorage.getItem('userActions') || '[]');
+  const timestamp = new Date().toLocaleString();
+  logs.push({ action: actionDescription, time: timestamp });
+  localStorage.setItem('userActions', JSON.stringify(logs));
+}
+
+// Log clicks on all buttons and links
+document.querySelectorAll('button, a').forEach(el => {
+  el.addEventListener('click', e => {
+    const text = e.target.innerText || e.target.href || 'Unknown action';
+    logUserAction(`Clicked "${text}"`);
+  });
+});
+
+// Log form submissions
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', e => {
+    logUserAction(`Submitted form with id="${form.id || 'no-id'}"`);
+  });
+});
+
