@@ -414,3 +414,11 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+.office-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
