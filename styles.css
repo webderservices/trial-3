@@ -377,3 +377,56 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+.service-cards {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1000px;
+  margin: auto;
+  align-items: stretch; /* ensures all cards are same height */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-tag {
+  margin-top: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+  padding-top: 1rem;
+}
+
+/* Special styling for "Best Value" Enterprise Plan */
+.card.best-option {
+  border: 2px solid var(--primary);
+  background: #eef1ff;
+  position: relative;
+  box-shadow: 0 0 0 transparent;
+  transition: 0.3s ease;
+  transform: scale(1.01);
+}
+
+.card.best-option:hover {
+  box-shadow: 0 0 12px rgba(94, 108, 240, 0.3);
+  transform: scale(1.03);
+}
+
+/* Best Value badge */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
