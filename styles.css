@@ -134,9 +134,19 @@ section h2 {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
   gap: 2rem;
+  max-width: 900px; /* optional: to keep the grid from stretching too wide */
+  margin: 0 auto; /* center the grid */
 }
+@media (max-width: 700px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+}
+
 
 .feature-card {
   background: white;
